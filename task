@@ -1,1 +1,41 @@
+1) task1 :installed opensips and freeswitch
+
+Opensips version   = opensips 3.1.6 (x86_64/linux)
+freeswitch version = FreeSWITCH version: 1.10.3-release~64bit (-release 64bit)
+
+2) task 2: configure opensips as a sip server with registrations handled from opensips in DB
+status : completed
+
+3)task 3:
+Register two softphones [1000, 1001] to a user and verify registration:
+Please confirm if the softphones have been registered successfully with opensips. Provide details on how to verify the registration through opensips_cli
+i)  i have Zoiper softphone  created user 1001,1001 and did registration successfully
+ii) to verify registration throgh opensips-cli, need  run opensips script
+     opensips -f filename.cfg -c
+     opensips -f filename.cfg
+     tail -f var/log/opensips.log (to check logs )
+     sngrep (to check user is registered or not)
+     in opensips-cli: mi subscribers_list
+
+4)task4:
+ Establish a call from softphone 1000 to 1001 and send INVITE to FreeSWITCH:
+   Update me on the progress of establishing a call between the registered softphones and sending the INVITE to FreeSWITCH.
+Status :complete
+
+5)task5:
+Configure a FreeSWITCH dialplan with LUA script to answer and add it in the conference
+   Status: [Pending/Completed/In Progress]
+   Let me know the current status of configuring the dialplan on FreeSWITCH. Ensure that the call is added in conference alone and the play file should listen.
+ Status :completed
+
+6)task 6:
+Configure a Lua hook on FreeSWITCH for Channel_hangup_complete and  CUSTOM ::conference::maintenance log relevant details that which conference-action is received.
+   Status: [Pending/Completed/In Progress]
+   Provide an update on the configuration of the Lua hook on FreeSWITCH. Confirm if the log is printing on hangup, such as from number, to number, call duration, timestamp, date, and call ID.
+Status: in progress
+
+task7 
+push the code into the Bitbucket repository with branch name <emp_id-name> and create a Pull request against the Master branch
+  created branch 675_manju
+  push code into master branch
 
